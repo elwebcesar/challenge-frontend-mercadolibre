@@ -1,0 +1,79 @@
+@import	"./_general";
+
+.header-doom {
+	padding: 8px 0;
+	background-color: $yellow;
+
+	& .wrap {
+		justify-content: space-around;
+	}
+
+	& a, & div {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.search_box {
+	position: relative;
+	margin-left: 20px;
+	width: calc(100% - 144px);
+	background-color: $white;
+
+	& form {
+		width: 100%;
+	}
+
+	& .alert-validate {
+		position: absolute;
+		right: 30px;
+		padding: 6px;
+		color: $white;
+		background-color: $alert;
+	}
+	
+	&__imput-search {
+		padding: 0 10px;
+		width: calc(100% - 30px);
+		box-sizing: border-box;
+		border: none;
+	}
+
+	&__btn-search {
+		margin: 0;
+		padding: 0;
+		width: 30px;
+		height: 30px;
+		text-indent: 900px;
+		overflow: hidden;
+		cursor: pointer;
+		background: $gray_sure url('https://pic.onlinewebfonts.com/svg/img_116032.png') center no-repeat;
+		background-size: 15px 15px;
+		border: none;
+	}
+}
+
+/* ------------------------------------------------------------------------
+Responsive
+------------------------------------------------------------------------- */
+@media screen and (max-width: $resolution-full) {
+	.search_box {
+		width: auto;
+		margin-left: 0;
+
+		& .alert-validate {
+			top: 13px;
+		}
+	}
+}
+
+@media screen and (max-width: $resolution-s) {
+	.header-doom .flex {
+		flex-flow: column;
+
+		.search_box {
+			margin-top: 0.5rem;
+			width: 100%;
+		}
+	}
+}

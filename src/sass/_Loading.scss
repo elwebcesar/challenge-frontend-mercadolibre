@@ -1,0 +1,20 @@
+@import	"./_general";
+
+.spinner {
+	margin: 40px auto;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	padding: 6.7px;
+	background: conic-gradient(from 135deg at top,$gray_dark 90deg, #0000 0) 0 calc(50% - 4.5px)/19px 9.5px,
+			radial-gradient(farthest-side at bottom left,#0000 calc(100% - 6.7px),$gray_dark calc(100% - 5.6px) 99%,#0000) top right/50%  50% content-box content-box,
+			radial-gradient(farthest-side at top,#0000 calc(100% - 6.7px),$gray_dark calc(100% - 5.6px) 99%,#0000) bottom   /100% 50% content-box content-box;
+	background-repeat: no-repeat;
+	animation: spinner-animate 1.2s infinite linear;
+}
+ 
+@keyframes spinner-animate {
+	100% {
+		transform: rotate(1turn);
+	}
+}

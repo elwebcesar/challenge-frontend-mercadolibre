@@ -1,0 +1,44 @@
+@import	"./sass/_normalize", "./sass/_general";
+
+body {
+  @include type-body;
+  background-color: $gray_sure;
+  color: $gray1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $gray_dark;
+  font-weight: 400;
+}
+
+
+/* ------------------------------------------------------------------------
+Layout
+------------------------------------------------------------------------- */
+.full {
+  width: 100%;
+}
+
+.wrap {
+  margin: 0 auto;
+  max-width: $resolution-full;
+}
+
+.flex {
+  display: flex;
+}
+
+.margin-t-15 {
+  margin-top: 15px;
+}
+
+
+/* ------------------------------------------------------------------------
+Responsive
+------------------------------------------------------------------------- */
+@media screen and (max-width: $resolution-full) {
+  .wrap {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
