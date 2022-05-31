@@ -22,6 +22,7 @@ export class ItemMapped {
       },
       picture: data.thumbnail,
       condition: data.condition,
+      category_id: data.category_id,
       free_shipping: data.shipping.free_shipping,
       sold_quantity: data.sold_quantity
     };
@@ -34,6 +35,7 @@ class Item {
   price!: Price;
   picture!: string;
   condition!: string;
+  category_id!: string;
   free_shipping!: boolean;
   sold_quantity!: number;
 }

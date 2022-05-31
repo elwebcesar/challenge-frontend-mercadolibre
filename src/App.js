@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { ReactDOM } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import './App.scss';
 
@@ -15,10 +14,10 @@ export default function App() {
   return (
     <main>
       <BrowserRouter>
-        <HeaderDoom />
+        <HeaderDoom setQuerySearch={setQuerySearch} />
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/items" element={<SetSearch />} />
+          <Route path="/items" element={<SetSearch querySearch={querySearch} />} />
           <Route path="/items/:id" element={<SetItem />} />
           <Route path="*" element={<Navigate replace to="/" />} />
         </Routes>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { generatePath, useNavigate, useSearchParams } from "react-router-dom";
 
-export default function Search() {
+export default function Search(props) {
   const [searchParams, setSearchParams] = useSearchParams()
 
   // data form
@@ -17,10 +17,8 @@ export default function Search() {
     setData({
         ...dataForm,
         [event.target.name] : event.target.value
-    });
-
-    setSearchParams({ item: event.target.value });
-
+    });  
+  
     setValidateError('')
   }
 
@@ -39,6 +37,7 @@ export default function Search() {
 
   const navigate = useNavigateParams()
 
+
   // submit from
   const submitData = (e) => {
     e.preventDefault();
@@ -54,6 +53,7 @@ export default function Search() {
 
     // send dates
     navigate("items",`search=${dataForm.query}`)
+    props.setQuerySearch(dataForm.query)
   }
 
 
@@ -66,7 +66,6 @@ export default function Search() {
           placeholder="Nunca dejes de buscar"
           className='search_box__imput-search'
           onChange={handleInputChange} 
-          value={searchParams.get('item')}
         ></input>
         <button type="submit" className='search_box__btn-search'>BUSCAR</button>
       </form>

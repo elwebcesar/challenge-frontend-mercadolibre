@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import '../../sass/_HeaderDoom.scss'
 
-export default function HeaderDoom() {
+export default function HeaderDoom(props) {
   return (
     <header className='header-doom full'>
       <div className='wrap flex'>
@@ -14,7 +14,7 @@ export default function HeaderDoom() {
             alt="Mercado Libre"
           />
         </Link>
-        <Search />
+        <Search setQuerySearch={props.setQuerySearch} />
       </div>
     </header>
   )

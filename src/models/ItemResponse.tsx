@@ -5,6 +5,7 @@ export class ItemResponse {
   currency_id!: string;
   thumbnail!: string;
   condition!: string;
+  category_id!: string;
   shipping!: Shipping;
   sold_quantity!: number;
 }
